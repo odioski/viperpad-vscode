@@ -7,7 +7,7 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/odioski/ViperPad-IDE.git"
+    "url": "git+https://github.com/odioski/viperpad-vscode.git"
   },
   "engines": {
     "vscode": "^1.92.0"
