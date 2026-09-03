@@ -1,0 +1,19 @@
+node_modules/
+out/
+*.vsix
+.DS_Store
+
+# Local test/sample files
+*.pdf
+*.docx
+*.jpeg
+*.jpg
+*.png
+*.gif
+*.webp
+
+# Logs and transient build outputs
+*.log
+coverage/
+dist/
+*.tsbuildinfo
