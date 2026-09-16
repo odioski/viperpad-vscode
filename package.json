@@ -2,7 +2,7 @@
   "name": "viperpad-vscode",
   "displayName": "ViperPad",
   "description": "ViperPad as a VS Code webview editor.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "BookMotives",
   "license": "MIT",
   "icon": "media/icon.png",
@@ -44,8 +44,8 @@
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
     "lint": "eslint src --ext ts",
-    "package": "npx --yes @vscode/vsce package --readme-path README-VSIX.md",
-    "publish": "npx --yes @vscode/vsce publish --readme-path README-VSIX.md",
+    "package": "npx --yes @vscode/vsce package",
+    "publish": "npx --yes @vscode/vsce publish",
     "vscode:prepublish": "npm run compile"
   },
   "devDependencies": {
