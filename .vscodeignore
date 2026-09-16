@@ -11,6 +11,9 @@ package-lock.json
 out/**/*.map
 *.log
 
+# The marketplace icon is intentionally included.
+!media/icon.png
+
 *.pdf
 *.docx
 *.jpeg

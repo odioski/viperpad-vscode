@@ -1,61 +1,79 @@
-# ViperPad VS Code
+# ViperPad for VS Code
 
-This is the VS Code extension host for ViperPad.
+ViperPad is a document editor and preview workspace for VS Code.
+
+## Install from the Marketplace
+
+1. Open VS Code.
+2. Open **Extensions** from the Activity Bar, or press `Ctrl+Shift+X` on Windows/Linux or `Cmd+Shift+X` on macOS.
+3. Search for **ViperPad**.
+4. Select **ViperPad** by **BookMotives**.
+5. Select **Install**.
+
+After installation, ViperPad is available in your VS Code workspace.
+
+## Install from a VSIX File
+
+Use this option when you have been given a `.vsix` installation file:
+
+1. Open VS Code.
+2. Open the Extensions view.
+3. Select the **...** menu in the Extensions view.
+4. Select **Install from VSIX...**.
+5. Choose the ViperPad `.vsix` file.
+6. Select **Reload** if VS Code asks you to reload.
+
+## Open ViperPad
+
+1. Open the Command Palette with `Ctrl+Shift+P` on Windows/Linux or `Cmd+Shift+P` on macOS.
+2. Type **ViperPad: Open**.
+3. Select **ViperPad: Open**.
+
+You can open ViperPad from the Command Palette whenever you need it.
+
+## Features
+
+- Open a file through the VS Code file picker.
+- Load and edit the active VS Code document.
+- Save changes back to the loaded document.
+- Preview Markdown and HTML documents.
+- Preview PDF documents.
+- Preview and edit DOCX documents.
+- Open HTTP and HTTPS resources as read-only documents.
+- Copy and clear the current document location.
+- Jump to an editor line and column.
+- Open a VS Code integrated terminal in the loaded file's directory.
+
+## Developers
 
 The standalone ViperPad app uses Rust, Axum, and a browser UI. This extension hosts the ViperPad UI inside a VS Code webview and bridges editor operations through the VS Code extension API.
 
-## Architecture
-
 ```text
 ViperPad webview
-  -> postMessage
+	-> postMessage
 VS Code extension host
-  -> vscode.workspace / vscode.window / commands / terminals
+	-> vscode.workspace / vscode.window / commands / terminals
 ```
 
-## Run
+### Local Development
+
+Install dependencies and compile the extension:
 
 ```bash
 npm install
 npm run compile
 ```
 
-Then open this folder in VS Code and start the extension host:
+To test the extension in VS Code:
 
-```bash
-code /home/mrod/CODE/viperpad-vscode
-```
+1. Open the project folder in VS Code.
+2. Open **Run and Debug**.
+3. Select **Run ViperPad Extension**.
+4. Press `F5` or **Start Debugging**.
+5. In the new Extension Development Host window, run **ViperPad: Open** from the Command Palette.
 
-In VS Code, run the `Run ViperPad Extension` launch config. In the new Extension Development Host window, open the command palette and run `ViperPad: Open`.
+## Support
 
-Run the command in the new Extension Development Host window, not the original project window. If ViperPad cannot initialize, VS Code now displays the startup error instead of failing silently.
+For questions or issues, visit the project's GitHub repository:
 
-`Run ViperPad Extension` is a launch configuration, not a command palette command. Use the Run and Debug view in VS Code, select `Run ViperPad Extension`, and press Start Debugging.
-
-## Ported Features
-
-- Open a file through the VS Code file picker.
-- Load the active VS Code document.
-- View source files with the ViperPad editor bundle.
-- Edit and save changes back to the loaded VS Code document.
-- Preview Markdown and HTML documents.
-- Preview PDFs with the built-in ViperPad PDF canvas renderer.
-- Preview DOCX documents and edit/save their extracted text as a clean DOCX.
-- Open HTTP and HTTPS resources as read-only documents.
-- Copy and clear the current document location.
-- Jump to an editor line and column.
-- Open a VS Code integrated terminal using the loaded file's directory.
-
-## Current Commands
-
-- `ViperPad: Open` opens the ViperPad webview.
-
-The terminal button uses VS Code's integrated terminal API. It does not require a terminal feature flag or a separate server.
-
-## Build an Installable Extension
-
-```bash
-npm run package
-```
-
-This creates a `.vsix` file in the extension folder. Install it from VS Code with `Extensions: Install from VSIX...`.
+https://github.com/odioski/viperpad-vscode
