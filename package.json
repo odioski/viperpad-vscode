@@ -2,7 +2,7 @@
   "name": "viperpad-vscode",
   "displayName": "ViperPad",
   "description": "ViperPad as a VS Code webview editor.",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "publisher": "BookMotives",
   "license": "MIT",
   "icon": "media/icon.png",
